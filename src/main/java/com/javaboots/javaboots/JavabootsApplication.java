@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class JavabootsApplication {
-//hej //somlaia/ali/afrika/afrika/afrika/adsdsasdsdsadsadfcdfsd
+//hej //somlaia/ali/afrika/afrika/afrika/adsdsasdsdsadsadfcdfsdhgfhgf
 	public static void main(String[] args) {
 		SpringApplication.run(JavabootsApplication.class, args);
 	}
