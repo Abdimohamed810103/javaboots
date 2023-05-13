@@ -42,11 +42,7 @@
 			<artifactId>jacoco-maven-plugin</artifactId>
 			<version>0.8.7</version>
 		</dependency>
-		<dependency>
-			<groupId>org.pitest</groupId>
-			<artifactId>pitest-maven</artifactId>
-			<version>1.13.1</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -73,7 +69,25 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.pitest</groupId>
+				<artifactId>pitest-maven</artifactId>
 
+				<dependencies>
+					<dependency>
+						<groupId>org.pitest</groupId>
+						<artifactId>pitest-junit5-plugin</artifactId>
+
+					</dependency>
+				</dependencies>
+				<configuration>
+					<mutationThreshold>70</mutationThreshold>
+					<outputFormats>
+						<outputFormat>XML</outputFormat>
+						<outputFormat>HTML</outputFormat>
+					</outputFormats>
+				</configuration>
+			</plugin>
 
 		</plugins>
 	</build>
