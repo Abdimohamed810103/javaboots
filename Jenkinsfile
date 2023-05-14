@@ -46,6 +46,7 @@ pipeline {
                         withKubeConfig([credentialsId: 'kubeconfig']) {
                           sh "sed -i 's#replace#caloosha/javaboots:${GIT_COMMIT}#g' k8s-deployment.yaml"
                           sh "kubectl apply -f k8s-deployment.yaml"
+                          sh "kubectl apply -f k8s-deployments.yaml"
                         }
                       }
                     }
