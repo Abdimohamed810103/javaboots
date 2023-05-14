@@ -17,10 +17,17 @@ spec:
       containers:
         - name: mongodb
           image: mongo
+          volumeMounts:
+            - name: mongovm
+              mountPath: /data/db
           ports:
             - name: mongodbport
               containerPort: 27017
               protocol: TCP
+      volumes:
+        - name: mongovm
+          persistentVolumeClaim:
+            claimName: my-pvc
 ---
 apiVersion: v1
 kind: Service
