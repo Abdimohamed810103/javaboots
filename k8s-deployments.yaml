@@ -27,7 +27,7 @@ spec:
               protocol: TCP
           env:
             - name: MONGO_INITDB_DATABASE
-              value: pincome
+              value: test
       volumes:
         - name: mongovm
           persistentVolumeClaim:
