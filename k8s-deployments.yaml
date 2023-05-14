@@ -26,7 +26,8 @@ spec:
               containerPort: 27017
               protocol: TCP
           env:
-            - MONGO_INITDB_DATABASE=pincome
+            - name: MONGO_INITDB_DATABASE
+              value: pincome
       volumes:
         - name: mongovm
           persistentVolumeClaim:
