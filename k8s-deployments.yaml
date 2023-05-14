@@ -13,10 +13,11 @@ spec:
     metadata:
       labels:
         app: mongodb
-    containers:
-      - name: mongodb
-        image: mongo
-        ports:
-          - name: mongodbport
-            containerPort: 27017
-            protocol: TCP
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo
+          ports:
+            - name: mongodbport
+              containerPort: 27017
+              protocol: TCP
