@@ -21,3 +21,16 @@ spec:
             - name: mongodbport
               containerPort: 27017
               protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: mongodb
+  name: mongodb
+spec:
+  ports:
+    - port: 27017
+      targetPort: 27017
+  selector:
+    name: mongodb
