@@ -25,6 +25,8 @@ spec:
             - name: mongodbport
               containerPort: 27017
               protocol: TCP
+          env:
+            - MONGO_INITDB_DATABASE=pincome
       volumes:
         - name: mongovm
           persistentVolumeClaim:
