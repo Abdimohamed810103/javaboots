@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: mongodb
-          image: mongo
+          image: mongo:latest
           volumeMounts:
             - name: mongovm
               mountPath: /data/db
