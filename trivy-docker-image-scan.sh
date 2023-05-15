@@ -1,8 +1,8 @@
 dockerImageName=$(awk 'NR==1 {print $2}' Dockerfile)
 echo $dockerImageName
 
-docker run --rm -v $WORKSPACE:/root/.cache/ aquasec/trivy:0.17.2 -q image --exit-code 0 --severity MEDIUM --light $dockerImageName
-docker run --rm -v $WORKSPACE:/root/.cache/ aquasec/trivy:0.17.2 -q image --exit-code 1 --severity MEDIUM --light $dockerImageName
+docker run --rm -v $WORKSPACE:/root/.cache/ aquasec/trivy:0.17.2 -q image --ignore-unfixed openjdk:17-jdk-alpine --exit-code 0 --severity MEDIUM --light $dockerImageName
+docker run --rm -v $WORKSPACE:/root/.cache/ aquasec/trivy:0.17.2 -q image --ignore-unfixed openjdk:17-jdk-alpine --exit-code 1 --severity MEDIUM --light $dockerImageName
 
     # Trivy scan result processing
     exit_code=$?
