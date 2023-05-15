@@ -31,7 +31,7 @@ pipeline {
                     }
                   stage('SonarQube - SAST') {
                              steps {
-                               sh "mvn clean verify sonar:sonar  -Dsonar.projectKey=jenkins -Dsonar.projectName='jenkins'  -Dsonar.host.url=http://ec2-3-85-238-97.compute-1.amazonaws.com:9000 -Dsonar.token=sqp_5e1fb478b92c307b5e27c7350fe15b9387fcc773"
+                               sh "mvn clean verify sonar:sonar -Dsonar.projectKey=jenkins -Dsonar.projectName='jenkins' -Dsonar.host.url=http://ec2-3-83-39-188.compute-1.amazonaws.com:9000 -Dsonar.token=sqp_9dfa5e73d24bdacc92a85dc7313fc98ad2773af4"
                              }
                          }
 
