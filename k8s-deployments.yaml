@@ -1,11 +1,10 @@
 apiVersion: apps/v1
-kind: "StatefulSet"
+kind: Deployment
 metadata:
   labels:
     app: mongodb
   name: mongodb
 spec:
-  serviceName: mongodb
   replicas: 1
   selector:
     matchLabels:
