@@ -5,7 +5,7 @@ pipeline {
       stage('Build Artifact') {
             steps {
               sh "mvn clean package -DskipTests=true"
-              archive 'target/*.jar' //so that they can sdddddsdssssdbddde downssssloassssded laterssssdddhjhjaaasdsdsadasssffffsssssdsdsdsssssssssddddcxcxcx
+              archive 'target/*.jar' //so that they can sdddddsdssssdbddde downssssloassssded laterssssdddhjhjaaasdsdsadasssffffsssssdsdsdsssssssssdddd
             }
         }
          stage('unit test') {
@@ -29,7 +29,11 @@ pipeline {
                         }
                       }
                     }
-
+                  stage('SonarQube - SAST') {
+                             steps {
+                               sh "  mvn clean verify sonar:sonar  -Dsonar.projectKey=jenkins -Dsonar.host.url=http://ec2-3-85-238-97.compute-1.amazonaws.com:9000 -Dsonar.login=sqp_ecb976f7dcdd8a9ebe49b82646c5339416feb464"
+                             }
+                         }
 
 
                 stage('Docker Build and Push') {
@@ -45,8 +49,8 @@ pipeline {
                       steps {
                         withKubeConfig([credentialsId: 'kubeconfig']) {
                           sh "sed -i 's#replace#caloosha/javaboots:${GIT_COMMIT}#g' k8s-deployment.yaml"
-                          sh "kubectl apply -f k8s-deployment.yaml"
                           sh "kubectl apply -f k8s-deployments.yaml"
+                          sh "kubectl apply -f k8s-deployment.yaml"
                         }
                       }
                     }
