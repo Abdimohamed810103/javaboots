@@ -29,6 +29,11 @@ pipeline {
                         }
                       }
                     }
+                  stage('SonarQube - SAST') {
+                             steps {
+                               sh "  mvn clean verify sonar:sonar  -Dsonar.projectKey=jenkins -Dsonar.host.url=http://ec2-3-85-238-97.compute-1.amazonaws.com:9000 -Dsonar.login=sqp_ecb976f7dcdd8a9ebe49b82646c5339416feb464"
+                             }
+                         }
 
 
                 stage('Docker Build and Push') {
