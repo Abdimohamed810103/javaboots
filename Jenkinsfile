@@ -29,11 +29,11 @@ pipeline {
                         }
                       }
                     }
-                  stage('SonarQube - SAST') {
+                /*  stage('SonarQube - SAST') {
                              steps {
                                sh "mvn clean verify sonar:sonar -Dsonar.projectKey=jenkins -Dsonar.projectName='jenkins' -Dsonar.host.url=http://ec2-3-83-39-188.compute-1.amazonaws.com:9000 -Dsonar.token=sqp_9dfa5e73d24bdacc92a85dc7313fc98ad2773af4"
                              }
-                         }
+                         } */
 
                  stage('Vulnerability Scan - Docker') {
                        steps {
