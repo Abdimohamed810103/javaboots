@@ -6,7 +6,7 @@ pipeline {
      serviceName = "devsecops-svc"
      imageName = "caloosha/javaboots:${GIT_COMMIT}"
      applicationURL = "http://ec2-3-89-74-85.compute-1.amazonaws.com"
-     applicationURI = "/api/v1"
+     applicationURI = "api/v1"
    }
   stages {
       stage('Build Artifact') {
