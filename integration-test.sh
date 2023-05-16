@@ -13,7 +13,7 @@ then
 
 
 
-    if [[ "$http_code" == 200 ]];
+    if [[ "$http_code" == 201 ]];
         then
             echo "HTTP Status Code Test Passed"
         else
